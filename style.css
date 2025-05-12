@@ -1,0 +1,111 @@
+html {
+  color-scheme: dark light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height; 1.5;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  text-align: center;
+}
+
+#imageNotice {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+}
+
+section {
+  padding-block: 5rem;
+}
+
+.diagonal { /* Creates a -5deg diagonal background*/
+  --skewAngle: -5deg;
+  --background: linear-gradient(
+    45deg,
+    #065A60,
+    #212F45,
+    #4D194D);
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  content: '';
+  background: var(--background);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(var(--skewAngle));
+}
+
+.diagonal2 { /* Creates a 5deg diagonal background*/
+  --skewAngle: 5deg;
+  --background: linear-gradient(
+    -45deg,
+    #EA698B,
+    #973AA8,
+    #47126B);
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal2::after {
+  content: '';
+  background: var(--background);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(var(--skewAngle));
+}
+
+.wavy { /* Creates a wavy background */
+  /* --mask created with https://css-generators.com/wavy-shapes/ */
+  background: linear-gradient(
+    to right,
+    #370617,
+    #9D0208,
+    #DC2F02,
+    #F48C06);
+  
+  --mask:
+    radial-gradient(77.18px at 50% 106px,#000 99%,#0000 101%) calc(50% - 80px) 0/160px 51% repeat-x,
+    radial-gradient(77.18px at 50% -66px,#0000 99%,#000 101%) 50% 40px/160px calc(51% - 40px) repeat-x,
+    radial-gradient(77.18px at 50% calc(100% - 106px),#000 99%,#0000 101%) 50% 100%/160px 51% repeat-x,
+    radial-gradient(77.18px at 50% calc(100% + 66px),#0000 99%,#000 101%) calc(50% - 80px) calc(100% - 40px)/160px calc(51% - 40px) repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.workDisplay { /* Used to vertically align images and text */
+  display: flex;
+  align-items:center;
+}
+
+.workDisplay img { /* Adds some space between image and text */
+  margin-right: 20px;
+}
+
+.reasonableImageSize {
+  width: 80%;
+  height: 80%;
+}
