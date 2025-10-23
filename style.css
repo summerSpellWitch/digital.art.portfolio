@@ -62,9 +62,9 @@ section {
   --skewAngle: 5deg;
   --background: linear-gradient(
     -45deg,
-    #EA698B,
-    #973AA8,
-    #47126B);
+    #0A210F,
+    #14591D,
+    #99AA38);
   position: relative;
   isolation: isolate;
 }
